@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 @csrf_exempt
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([AllowAny])  # Changed from IsAuthenticated to AllowAny
 def signup(request):
     """
     Handles user signup via a POST request.
@@ -146,7 +146,7 @@ def get_new_users(request):
 
 @csrf_exempt
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])  # Changed from IsAuthenticated to AllowAny
 def user_logout(request):
     """
     Handles user logout via a POST request.
